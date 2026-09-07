@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmarker</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 class="logo">Bookmarker</h1>
+        <hr />
+      </div>
+
+      <div class="form-section">
+        <h2 class="sub">
+          <i class="fa-solid fa-bookmark"></i>
+          Bookmark your favorite sites
+          <i class="fa-solid fa-bookmark"></i>
+        </h2>
+
+        <form id="bookmarkForm">
+          <div class="form-control">
+            <label for="siteName"
+              ><i class="fa-solid fa-floppy-disk"></i> Site Name</label
+            >
+            <div class="input-wrapper">
+              <input type="text" id="siteName" placeholder="Bookmark Name" />
+              <span id="nameStatus" class="status"></span>
+            </div>
+          </div>
+
+          <div class="form-control">
+            <label for="siteURL"
+              ><i class="fa-solid fa-link"></i> Site URL</label
+            >
+            <div class="input-wrapper">
+              <input type="text" id="siteURL" placeholder="Website URL" />
+              <span id="urlStatus" class="status"></span>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        <hr />
+      </div>
+
+      <div class="table-section">
+        <table id="bookmarksTable">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>Website Name</th>
+              <th>Visit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-card">
+        <div class="modal-dots">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <button class="modal-close" id="modalClose">&times;</button>
+        <div class="modal-body">
+          <h3>Site Name or Url is not valid, Please follow the rules below :</h3>
+          <ul class="rules">
+            <li>-> Site name must be at least 3 characters</li>
+            <li>-> Site URL must be a valid one</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
